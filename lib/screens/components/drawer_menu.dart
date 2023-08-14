@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_admin_dashboard/constants/constants.dart';
+import 'package:responsive_admin_dashboard/screens/components/dashboard_content.dart';
 import 'package:responsive_admin_dashboard/screens/components/drawer_list_tile.dart';
+import '../../common/base_screen.dart';
+import '../dash_board_screen.dart';
 
 class DrawerMenu extends StatelessWidget {
   const DrawerMenu({Key? key}) : super(key: key);
@@ -18,12 +21,16 @@ class DrawerMenu extends StatelessWidget {
               title: 'Dash Board',
               svgSrc: 'assets/icons/Dashboard.svg',
               tap: () {
-                print('You Click Dash Board');
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => BaseScreen('dashboard')));
               }),
           DrawerListTile(
               title: 'OCR System',
               svgSrc: 'assets/icons/BlogPost.svg',
-              tap: () {}),
+              tap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => BaseScreen('ocr_system')));
+              }),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: appPadding * 2),
             child: Divider(

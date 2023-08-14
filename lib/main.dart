@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:responsive_admin_dashboard/common/base_screen.dart';
 import 'package:responsive_admin_dashboard/controllers/controller.dart';
 import 'package:responsive_admin_dashboard/screens/dash_board_screen.dart';
 
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
         providers: [
           ChangeNotifierProvider(create: (context) => Controller(),)
         ],
-        child: DashBoardScreen(),
+        child: BaseScreen('ocr_system'),
       ),
     );
   }

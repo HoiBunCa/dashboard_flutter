@@ -4,11 +4,16 @@ import 'package:responsive_admin_dashboard/constants/responsive.dart';
 import 'package:responsive_admin_dashboard/controllers/controller.dart';
 import 'package:responsive_admin_dashboard/screens/components/dashboard_content.dart';
 
-import 'components/drawer_menu.dart';
 import 'package:provider/provider.dart';
 
-class DashBoardScreen extends StatelessWidget {
-  const DashBoardScreen({Key? key}) : super(key: key);
+import '../screens/components/drawer_menu.dart';
+import 'base_content.dart';
+
+class BaseScreen extends StatelessWidget {
+
+  String menu;
+
+  BaseScreen(this.menu);
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +28,7 @@ class DashBoardScreen extends StatelessWidget {
             if (Responsive.isDesktop(context)) Expanded(child: DrawerMenu(),),
             Expanded(
               flex: 5,
-              child: DashboardContent(),
+              child: BaseContent(this.menu),
             )
           ],
         ),
